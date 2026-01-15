@@ -486,7 +486,7 @@ h1 {
   background-size: 100% 70%, 0 70%;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.3s linear;
+  transition: background-size 0.6s linear;
   /* animation: show-bg ease-in 0.5s forwards; */
    /* will-change: background-size;  */
 }
@@ -783,11 +783,27 @@ h1 {
 /* Acordion */
 .accordion-item {
     border: unset;
+    background-color: transparent;
 }
 
 .accordion-button:not(.collapsed) {
     color: black;
     background-color: white;
+    box-shadow: unset;
+}
+
+.accordion-button {
+    background-color: var(--bs-body-bg) !important;
+}
+
+.accordion-button.collapsed {
+    background-color: var(--bs-body-bg) !important;
+    color: black;
+}
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: white !important;
     box-shadow: unset;
 }
 
@@ -881,23 +897,38 @@ h1 {
 }
 
 .ads-button {
-    top: 8%;
-    left: 60%;
+    top: 18%;
+    left: 50%;
 }
 
 .vh-button {
-    top: 35%;
-    left: 73%;
+    top: 46%;
+    left: 82%;
 }
 
 .sales-button {
-    top: 30%;
-    left: 18%;
+    top: 48%;
+    left: 24%;
 }
 
 .luong-button {
     top: 60%;
-    left: 25%;
+    left: 34%;
+}
+
+.doanhso-button {
+    top: 54%;
+    left: 58%;
+}
+
+.doitac-button {
+    top: 62%;
+    left: 70%;
+}
+
+.chinhanh-button {
+    top: 70%;
+    left: 46%;
 }
 
 
@@ -1073,6 +1104,25 @@ h1 {
     box-shadow: var(--bs-box-shadow-sm);
 }
 
+img.rounded-5.shadow-custom.w-100 {
+    border: 1px solid #0c0c0c;
+}
+
 .text-tranparent {
     color: transparent !important;
+}
+
+
+.col-md-6.col-lg-3.border-2.border-custom.py-sm-4.py-md-5.ps-lg-4.ps-xxl-5.hover-1 p.fs-3 {
+    min-height: 182px;
+}
+
+a.video-item.d-flex.align-items-center {
+    text-decoration: none !important;
+    color: unset;
+}
+
+
+.btn.btn-primary.position-absolute.fs-4.px-4.py-md-3.rounded-pill {
+    padding: 0.5rem 0.8rem!important;
 }

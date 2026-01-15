@@ -127,9 +127,10 @@
             </div>
 
             <!-- Right side -->
-            <div class="col-lg-3">
-                <img src="{{ asset('img/441400452_949802063555552_4379178154103149160_n.jpg') }}" alt="" class="rounded-5 shadow-custom w-100 mb-5">
-                <img src="{{ asset('img/441400452_949802063555552_4379178154103149160_n.jpg') }}" alt="" class="rounded-5 shadow-custom w-100 mb-5">
+             <div class="col-lg-3">
+                <img src="{{ asset('img/2.jpg') }}" alt="" class="rounded-5 shadow-custom w-100 ">
+                <img src="{{ asset('img/website qc-2 copy.jpg') }}" alt="" class="rounded-5 shadow-custom w-100 mt-5">
+                <img src="{{ asset('img/website qc-3 copy.jpg') }}" alt="" class="rounded-5 shadow-custom w-100 mt-5">
             </div>
         </div>
     </div>

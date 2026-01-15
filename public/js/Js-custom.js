@@ -172,21 +172,30 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $(window).scroll(function () {
-  var vitribody = $(window).scrollTop();
+    function updateCustomBgHighlight() {
+      var vitribody = $(window).scrollTop();
+      var viewportTop = vitribody;
+      var viewportBottom = vitribody + $(window).height();
 
-  $('.custom-bg').each(function () {
-    var vitrigiaodien = $(this).offset().top;
+      $('.custom-bg').each(function () {
+        var $el = $(this);
+        var elementTop = $el.offset().top;
+        var elementHeight = $el.outerHeight();
+        var elementBottom = elementTop + elementHeight;
+        var visibleHeight = Math.min(elementBottom, viewportBottom) - Math.max(elementTop, viewportTop);
+        var thresholdEnter = elementHeight * 0.15;
+        var thresholdLeave = elementHeight * 0.15;
 
-    vitrigiaodien = vitrigiaodien - 250;
-
-    if (vitribody >= vitrigiaodien) {
-      $(this).find('a').addClass('show-bg');
-    } else {
-      $(this).find('a').removeClass('show-bg');
+        if (visibleHeight >= thresholdEnter && elementTop < viewportBottom - thresholdLeave && elementBottom > viewportTop + thresholdLeave) {
+          $el.find('a').addClass('show-bg');
+        } else {
+          $el.find('a').removeClass('show-bg');
+        }
+      });
     }
-  });
-});
+
+    updateCustomBgHighlight(); // initial paint on load
+    $(window).on('scroll resize', updateCustomBgHighlight);
 });
 
 $(document).ready(function () {
@@ -289,8 +298,13 @@ $(document).ready(function () {
     });
 
     owl.on('changed.owl.carousel', function (event) {
+        const carousel = event.relatedTarget;
+        const total = carousel.items().length;
+        let current = event.item.index - carousel.clones().length / 2;
+        if (current < 0) current = total + current;
+        if (current >= total) current = current - total;
         $('.thumbnail li').removeClass('active');
-        $('.thumbnail li').eq(event.item.index - 3).addClass('active');
+        $('.thumbnail li').eq(current).addClass('active');
     });
 });
 
