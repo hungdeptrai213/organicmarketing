@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', config('app.name', 'OM') . ' - Quản trị')
 
@@ -35,49 +35,48 @@
         </div>
     </div>
 
-    <!-- Radar -->
+       <!-- Radar -->
     <div class="container width-60 mt-6">
         <div class="row justify-content-center">
             <h1 class="text-center fw-max-bold text-black fs-custom mon-alt fst-italic position-relative custom-bg">
                 <a class="px-0 text-black">CRM OM giúp bạn quan sát<br class="d-none d-md-block"> mọi chỉ số quan trọng</a>
             </h1>
-
-            <p class="mt-3 text-sm-start text-md-center text-black fs-3 fw-bold ">Khi dữ liệu được minh bạch và nhất quán,
-                mọi quyết định đều trở nên chính xác hơn. Với hệ thống quản trị CRM OM, bạn luôn nắm bắt kịp thời các thông
-                tin quan trọng, đồng thời nhận được những cảnh báo thông minh dựa trên tiêu chí riêng của doanh nghiệp, giúp
-                chủ động kiểm soát và tối ưu hiệu quả vận hành.
+    
+            <p class="mt-3 mb-0 text-sm-start text-md-center text-black fs-3 fw-bold ">Khi thông tin càng rõ ràng, mọi quyết định bạn đưa ra càng
+                chính xác.
+                Khi nắm trong tay hệ thống quản trị CRM OM, bạn sẽ dễ dàng cập nhật những thông tin quan trọng tại mọi thời
+                điểm và cùng với đó là những cảnh báo chính xác dựa trên những tiêu chí doanh nghiệp.
             </p>
-
-            <div class="col-lg-8 mt-4 position-relative">
+    
+            <div class="col-sm-12 col-lg-8 mt-sm-0 position-relative radar-section">
                 <div class="position-relative radar">
-                    <img src="{{ asset('img/website Radar 2.png') }}" alt=""
+                     <img src="{{ asset('img/website Radar 2.png') }}" alt=""
                         class=" position-absolute rotate-item w-100">
                     <img src="{{ asset('img/website Radar Circle 2.png') }}" alt="" class="w-100 ">
                 </div>
                 <div class="radar-button">
                     <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill ads-button">Quảng cáo</button>
+                        class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill quang-cao-button">Quảng cáo
+                    </button>
                     <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill sales-button">Sales</button>
-
+                        class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill sales-button">Sales
+                    </button>
+                    <button type="button" class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill vh-button">Vận
+                        hành
+                    </button>
                     <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill vh-button">Vận
-                        hành</button>
-                    <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill luong-button">Lương</button>
-                    <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill doanhso-button">Doanh số</button>
-                    <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill doitac-button">Đối tác</button>
-                    <button type="button"
-                        class="btn btn-primary position-absolute fs-4 px-4 py-md-3 rounded-pill chinhanh-button">Chi nhánh</button>
+                        class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill luong-button">Lương
+                    </button>
+                    <button type="button" class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill doanh-so-button">Doanh số</button>
+                    <button type="button" class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill doi-tac-button">Đối tác</button>
+                    <button type="button" class="btn btn-primary position-absolute fs-4 px-3 py-md-2 rounded-pill chi-nhanh-button">Chi nhánh</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Quan ly -->
-    <div class="container width-60">
+    <div class="container width-60 mt-6 pt-5">
         <div class="row justify-content-center">
             <h1 class="text-center fw-max-bold text-black fs-custom mon-alt fst-italic position-relative custom-bg w-75">
                 <a class="px-0 text-black">Quản lý dễ dàng<br>

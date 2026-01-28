@@ -10,6 +10,13 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
+    <div class="d-flex flex-wrap gap-2 mb-3">
+        <a href="{{ route('admin.posts.index') }}" class="btn btn-outline-secondary">Posts</a>
+        <a href="{{ route('admin.topics.index') }}" class="btn btn-outline-secondary">Topics</a>
+        <a href="{{ route('admin.authors.index') }}" class="btn btn-outline-secondary">Authors</a>
+        <a href="{{ route('admin.industries.index') }}" class="btn btn-outline-secondary">Industries</a>
+    </div>
+
     <form method="GET" action="{{ route('admin.posts.index') }}" class="mb-3 d-flex gap-2">
         <input type="text" name="q" value="{{ request('q') }}" class="form-control" placeholder="Tìm theo tiêu đề">
         <button type="submit" class="btn btn-primary">Tìm</button>

@@ -24,6 +24,12 @@
     color: black;
 }
 
+.nav-link.active {
+    color: #0C3B2E;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
 .bg-custom {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--custom-color), var(--bs-bg-opacity, 1));
@@ -411,7 +417,7 @@ h1 {
 }
 
 .mon-alt {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .form-control {
@@ -838,6 +844,8 @@ h1 {
     border-bottom-left-radius: 2.3rem;
 }
 
+
+
 .accordion-item {
     box-shadow: var(--bs-box-shadow-sm);
     margin-bottom: 1rem;
@@ -887,48 +895,48 @@ h1 {
 .spinning {
   animation: spin 2s linear infinite;
 }
-
 .radar {
-    transform: perspective(1200px) translateX(-30px) translateY(-95px) scale(1) rotate(0deg) rotateX(38deg) rotateY(-22deg) translateZ(0px);
+    transform: perspective(1200px) translateX(-30px) translateY(0) scale(1) rotate(0deg) rotateX(38deg) rotateY(-22deg) translateZ(0px);
 }
 
 .radar-button button {
-    pointer-events: none !important;
+    /* pointer-events: none !important; */
 }
 
+.quang-cao-button,
 .ads-button {
-    top: 18%;
-    left: 50%;
+    top: 20%;
+    left: 49%;
 }
 
 .vh-button {
-    top: 46%;
-    left: 82%;
+    top: 37%;
+    left: 80%;
 }
 
 .sales-button {
-    top: 48%;
-    left: 24%;
+    top: 40%;
+    left: 20%;
 }
 
 .luong-button {
-    top: 60%;
-    left: 34%;
+    top: 67%;
+    left: 20%;
 }
 
-.doanhso-button {
-    top: 54%;
-    left: 58%;
+.doanh-so-button {
+    top: 53%;
+    left: 54%;
 }
 
-.doitac-button {
-    top: 62%;
-    left: 70%;
+.doi-tac-button {
+    top: 75%;
+    left: 65%;
 }
 
-.chinhanh-button {
-    top: 70%;
-    left: 46%;
+.chi-nhanh-button {
+    top: 98%;
+    left: 33%;
 }
 
 

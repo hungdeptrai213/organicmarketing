@@ -256,6 +256,8 @@
     #carouselExample1 .carousel-control-prev {
         /* top: 70%; */
     }
+
+    
 }
 
 @media (max-width: 1620px) {
@@ -439,8 +441,8 @@
 
 @media (min-width: 1199px) {
   .big-logo {
-    
-    margin-bottom: 1.5rem !important;
+    margin-top: 2.1rem !important;
+    margin-bottom: 1.1rem !important;
   }
 
 
@@ -454,51 +456,137 @@
   }
 }
 
+@media (max-width: 1920px) {
+    .quang-cao-button, .ads-button {
+    top: 20%;
+    left: 43%;
+  }
 
+    .chi-nhanh-button {
+      top: 95%;
+      left: 30%;
+  }
+  .vh-button {
+    top: 40%;
+    left: 81%;
+    }
+}
 
-@media (max-width: 750px) {
-  .ads-button {
-    top: 12%;
-    left: 52%;
+@media (max-width: 1610px) {
+    
+    .chi-nhanh-button {
+      top: 92%;
+      left: 30%;
   }
 
   .vh-button {
-    top: 60%;
+    top: 37%;
+    left: 75%;
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .quang-cao-button, .ads-button {
+    top: 16%;
+    left: 43%;
+  }
+    
+    .vh-button {
+    top: 35%;
+    left: 68%;
+    }
+    .chi-nhanh-button {
+      top: 89%;
+      left: 30%;
+  }
+
+  .doanh-so-button {
+    top: 54%;
+    left: 52%;
+  }
+
+  .sales-button {
+    top: 40%;
+    left: 13%;
+  }
+}
+
+@media (max-width: 1100px) {
+    
+  .quang-cao-button, .ads-button {
+    top: 17%;
+    left: 43%;
+  }
+
+    .vh-button {
+    top: 35%;
+    left: 70%;
+    }
+
+    .chi-nhanh-button {
+      top: 91%;
+      left: 30%;
+  }
+
+  .sales-button {
+    top: 43%;
+    left: 13%;
+  }
+  .luong-button {
+    top: 68%;
+    left: 20%;
+  }
+
+}
+
+@media (max-width: 750px) {
+  .quang-cao-button, .ads-button {
+    top: 17%;
+    left: 43%;
+  }
+
+  .vh-button {
+    top: 35%;
     left: 70%;
   }
 
   .sales-button {
-    top: 36%;
-    left: 12%;
+    top: 38%;
+    left: 11%;
+  }
+  .chi-nhanh-button {
+    top: 87%;
+    left: 30%;
+  }
+
+  .doanh-so-button {
+    top: 55%;
+    left: 56%;
   }
 
   .luong-button {
-    top: 72%;
-    left: 18%;
-  }
-
-  .doanhso-button {
-    top: 58%;
-    left: 48%;
-  }
-
-  .doitac-button {
-    top: 70%;
-    left: 62%;
-  }
-
-  .chinhanh-button {
-    top: 82%;
-    left: 44%;
+    top: 64%;
+    left: 20%;
   }
 
   .radar {
-    transform: perspective(1200px) translateX(-10px) translateY(-60px) scale(1) rotate(0deg) rotateX(38deg) rotateY(-22deg) translateZ(0px);
+    transform: perspective(1200px) translateX(-10px) translateY(0) scale(1) rotate(0deg) rotateX(38deg) rotateY(-22deg) translateZ(0px);
   }
 
   .search-1 .fs-1 {
     font-size: 1.3rem !important;
   }
+
+  .radar-section .fs-4 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+    .radar-section .fs-4 {
+        font-size: 1.5rem !important;
+    }
 }
 
 
@@ -507,6 +595,7 @@
         flex: 0 0 auto;
         width: 18%;
     }
+    
 }
 
 @media (min-width: 1900px) {
@@ -521,8 +610,8 @@
 @media (max-width: 1100px) {
     .thong-tin-khoa-hoc {
         flex-direction: column-reverse;
-
 }
+    
 }
 
 @media (max-width: 1100px) {

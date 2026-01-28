@@ -50,10 +50,11 @@ class AdminPostController extends Controller
             'upload' => 'required|mimes:jpg,jpeg,png,gif,webp,svg|max:8192',
         ]);
 
-        $path = $request->file('upload')->store('uploads', 'public');
+        $path = $this->storePublicUpload($request->file('upload'));
 
         return response()->json([
-            'uploaded' => true,
+            'uploaded' => 1,
+            'fileName' => basename($path),
             'url' => asset('storage/' . $path),
         ]);
     }
@@ -94,13 +95,13 @@ class AdminPostController extends Controller
         // Upload cover
         $coverPath = null;
         if ($request->hasFile('cover_image')) {
-            $coverPath = $request->file('cover_image')->store('uploads', 'public');
+            $coverPath = $this->storePublicUpload($request->file('cover_image'));
         }
 
         // Optional content image to append
         $content = $data['content'];
         if ($request->hasFile('content_image')) {
-            $contentImagePath = $request->file('content_image')->store('uploads', 'public');
+            $contentImagePath = $this->storePublicUpload($request->file('content_image'));
             $content .= "\n<p><img src=\"".asset('storage/'.$contentImagePath)."\" alt=\"\"></p>";
         }
 
@@ -196,13 +197,13 @@ class AdminPostController extends Controller
 
         $coverPath = $post->cover_image;
         if ($request->hasFile('cover_image')) {
-            $stored = $request->file('cover_image')->store('uploads', 'public');
+            $stored = $this->storePublicUpload($request->file('cover_image'));
             $coverPath = 'storage/' . $stored;
         }
 
         $content = $data['content'];
         if ($request->hasFile('content_image')) {
-            $contentImagePath = $request->file('content_image')->store('uploads', 'public');
+            $contentImagePath = $this->storePublicUpload($request->file('content_image'));
             $content .= "\n<p><img src=\"".asset('storage/'.$contentImagePath)."\" alt=\"\"></p>";
         }
 
@@ -247,6 +248,23 @@ class AdminPostController extends Controller
         $post->industries()->sync($industryIds);
 
         return redirect()->route('admin.posts.index')->with('success', 'Đã cập nhật bài viết.');
+    }
+
+    private function storePublicUpload($file): string
+    {
+        $path = $file->store('uploads', 'public');
+        $sourcePath = Storage::disk('public')->path($path);
+        $publicPath = public_path('storage/' . $path);
+
+        if (!file_exists($publicPath)) {
+            $publicDir = dirname($publicPath);
+            if (!is_dir($publicDir)) {
+                mkdir($publicDir, 0755, true);
+            }
+            @copy($sourcePath, $publicPath);
+        }
+
+        return $path;
     }
 
     public function destroy(Post $post)
